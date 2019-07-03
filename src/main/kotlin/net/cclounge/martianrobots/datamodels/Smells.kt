@@ -1,3 +1,3 @@
 package net.cclounge.martianrobots.datamodels
 
-typealias Smells = List<Cell>
+typealias Smells = Set<Cell>
