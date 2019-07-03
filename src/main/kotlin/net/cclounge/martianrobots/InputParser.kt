@@ -20,8 +20,8 @@ class InputParser {
         lateinit var gridSpec: GridSpec
         var tmpRobot: Robot? = null
         val robotsAndCommands: MutableList<Pair<Robot, List<Command>>> = mutableListOf()
-        lines.forEach {
-            val items = it.split("\\s".toRegex())
+        lines.forEach { line ->
+            val items = line.split("(\\s)+".toRegex()).dropLastWhile { it.isEmpty() }
             when {
                 items.isEmpty() -> {} // skip empty lines
                 expectedNext == Expected.GRID_SPEC -> {
